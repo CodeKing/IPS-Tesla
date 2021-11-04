@@ -279,6 +279,12 @@ class TeslaVehicleControl extends IPSModule
         return $this->sendData('RemoteSteeringWheelHeaterRequest', $params);
     }
 
+    public function SetPreConditioningMax(bool $value)
+    {
+        $params = ['on' => $value];
+        return $this->sendData('SetPreConditioningMax', $params);
+    }
+
     //Media Functions
     public function MediaTogglePlayback()
     {
