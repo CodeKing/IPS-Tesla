@@ -221,6 +221,10 @@ class TeslaSplitter extends IPSModule
             case 'AutoConditioningStop':
                 $result = $this->sendRequest('/vehicles/' . $this->ReadPropertyString('Vehicles') . '/command/auto_conditioning_stop', [], 'POST');
                 break;
+            case 'SetPreConditioningMax':
+                $params = (array) $data->Buffer->Params;
+                $result = $this->sendRequest('/vehicles/' . $this->ReadPropertyString('Vehicles') . '/command/set_preconditioning_max', $params, 'POST');
+                break;
             case 'SetTemps':
                 $params = (array) $data->Buffer->Params;
                 $result = $this->sendRequest('/vehicles/' . $this->ReadPropertyString('Vehicles') . '/command/set_temps', $params, 'POST');
