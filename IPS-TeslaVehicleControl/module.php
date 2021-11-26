@@ -270,7 +270,7 @@ class TeslaVehicleControl extends IPSModule
             'heater' => $heater,
             'level'  => $level
         ];
-        return $this->sendData('SetTemps', $params);
+        return $this->sendData('RemoteSeatHeaterRequest', $params);
     }
 
     public function RemoteSteeringWheelHeaterRequest(bool $value)
